@@ -10,6 +10,62 @@ Gain more practical experience by using this repository that contains a Python W
 1. Enable your [GitHub Copilot service](https://github.com/github-copilot/signup)
 1. Open [this repository with Codespaces](https://codespaces.new/MicrosoftDocs/mslearn-copilot-codespaces-python)
 
+# Quickstart
+
+This project is a FastAPI application that serves weather data via a REST API.
+
+## Prerequisites
+- Python 3.10+
+- pip (Python package manager)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd mslearn-advanced-copilot
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Running the Application
+Start the FastAPI server:
+```bash
+python main.py
+```
+
+Or, if using uvicorn (recommended):
+```bash
+uvicorn main:app --reload
+```
+
+The API will be available at `http://localhost:8000`.
+
+- API documentation: [http://localhost:8000/docs](http://localhost:8000/docs)
+- OpenAPI schema: [http://localhost:8000/.well-known/openapi.json](http://localhost:8000/.well-known/openapi.json)
+
+## Running Tests
+Run the test suite with:
+```bash
+pytest
+```
+
+## Project Structure
+- `main.py`: Main FastAPI application
+- `weather.json`: Historical weather data
+- `test_main.py`: Test suite
+- `.well-known/openapi.json`: Generated OpenAPI schema
+
+## Endpoints
+- `/countries`: List all countries/regions
+- `/countries/{country}`: List cities in a country/region
+- `/countries/{country}/{city}/{month}`: Get weather data for a city and month
+
+---
+For more details, see the code and API docs.
+
+
 ## 💪🏽 Exercise
 The current API is not exposing country/{country} which needs to be implemented to list cities. The route should allow only GET HTTP requests with a JSON response providing information from the historical high and low for that country, city, and given month.
 
